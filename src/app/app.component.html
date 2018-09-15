@@ -2,5 +2,5 @@
   <h1>
     <button (click)="buttonClicked()" [ngClass]="{'button-clicked': showTitle}">Zobrazit titulek</button>
   </h1>
-  <app-titulek [show]="showTitle"></app-titulek>
+  <app-titulek [show]="showTitle" (hide)="buttonClicked()"></app-titulek>
 </div>
