@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {MyService} from './my.service';
 
 @Component({
   selector: 'app-root',
@@ -7,15 +6,11 @@ import {MyService} from './my.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = '';
   showTitle = false;
 
-  constructor(private myService: MyService) {
-
-  }
+  constructor() {}
 
   ngOnInit(): void {
-    this.title = this.myService.getApplicationTitle();
   }
 
   buttonClicked() {

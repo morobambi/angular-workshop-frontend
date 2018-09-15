@@ -2,8 +2,5 @@
   <h1>
     <button (click)="buttonClicked()" [ngClass]="{'button-clicked': showTitle}">Zobrazit titulek</button>
   </h1>
-  <h1 *ngIf="showTitle">
-    Welcome to
-    <div *ngFor="let letter of title.split('')">{{letter}}</div>
-  </h1>
+  <app-titulek [show]="showTitle"></app-titulek>
 </div>
