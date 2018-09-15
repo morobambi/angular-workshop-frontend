@@ -8,6 +8,7 @@ import {MyService} from './my.service';
 })
 export class AppComponent implements OnInit {
   title = '';
+  showTitle = false;
 
   constructor(private myService: MyService) {
 
@@ -15,5 +16,9 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.title = this.myService.getApplicationTitle();
+  }
+
+  buttonClicked() {
+    this.showTitle = !this.showTitle;
   }
 }
