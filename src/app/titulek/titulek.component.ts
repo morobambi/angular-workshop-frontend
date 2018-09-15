@@ -10,7 +10,7 @@ export class TitulekComponent implements OnInit {
 
   title = '';
   @Input() show = false;
-  @Output() hide = new EventEmitter<void>();
+  @Output() showChange = new EventEmitter<boolean>();
 
   constructor(private myService: MyService) {
   }
@@ -20,6 +20,7 @@ export class TitulekComponent implements OnInit {
   }
 
   buttonClicked() {
-    this.hide.emit();
+    this.show = false;
+    this.showChange.emit(this.show);
   }
 }
