@@ -6,4 +6,8 @@ import { Injectable } from '@angular/core';
 export class MyService {
 
   constructor() { }
+
+  getApplicationTitle(): string {
+    return 'titulek';
+  }
 }
