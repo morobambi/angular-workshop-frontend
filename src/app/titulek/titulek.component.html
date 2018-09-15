@@ -1,5 +1,6 @@
 <h1 *ngIf="show">
   Welcome to
+  <div><input [(ngModel)]="title"></div>
   <div *ngFor="let letter of title.split('')">{{letter}}</div>
   <div><button (click)="buttonClicked()">Zavřít</button></div>
 </h1>
