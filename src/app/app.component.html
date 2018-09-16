@@ -13,5 +13,5 @@
   Výsledek: {{result}}
 </div>
 <div style="text-align:center">
-  <app-calculation-history [calculationHistory]="calculationHistory"></app-calculation-history>
+  <app-calculation-history [calculationHistory]="calculationHistory" (rerunCalculation)="rerunCalculation($event)"></app-calculation-history>
 </div>

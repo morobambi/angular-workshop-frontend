@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Calculation} from '../calculation.model';
 
 @Component({
@@ -9,9 +9,14 @@ import {Calculation} from '../calculation.model';
 export class CalculationHistoryComponent implements OnInit {
 
   @Input() calculationHistory: Calculation[];
+  @Output() rerunCalculation = new EventEmitter<Calculation>();
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  rerun(calculation: Calculation) {
+    this.rerunCalculation.emit(calculation);
   }
 }

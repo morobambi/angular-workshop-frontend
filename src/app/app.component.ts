@@ -45,6 +45,13 @@ export class AppComponent implements OnInit {
     }
   }
 
+  rerunCalculation(calculation: Calculation) {
+    this.input1 = calculation.input1;
+    this.input2 = calculation.input2;
+    this.operation = calculation.operation;
+    this.result = calculation.result;
+  }
+
   ngOnInit(): void {
   }
 
