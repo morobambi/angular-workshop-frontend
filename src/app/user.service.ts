@@ -11,15 +11,14 @@ export class UserService {
   constructor() {}
 
   getAll(): User[] {
-    return [];
-    // TODO
+    return Array.from(this.users).map(([email, user]) => user);
   }
 
   save(user: User) {
-    // TODO
+    this.users.set(user.email, user);
   }
 
   delete(email: string) {
-    // TODO
+    this.users.delete(email);
   }
 }

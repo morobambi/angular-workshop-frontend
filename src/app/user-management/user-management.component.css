@@ -1,0 +1,23 @@
+label {
+  width: 100px;
+  display: inline-block;
+  text-align: right;
+  padding-right: 15px;
+}
+
+.save-button {
+  margin-top: 20px;
+}
+
+table {
+  display: inline-block;
+}
+
+td, th {
+  padding: 10px;
+  border-bottom: 1px solid black;
+}
+
+td:not(:first-child), th:not(:first-child) {
+  border-left: 1px solid black;
+}
