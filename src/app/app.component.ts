@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Calculation} from './calculation.model';
 
 @Component({
   selector: 'app-root',
@@ -12,24 +13,30 @@ export class AppComponent implements OnInit {
   operation: string;
   result: number;
 
+  calculationHistory: Calculation[] = [];
+
   constructor() {}
 
   countResult() {
     switch (this.operation) {
       case '+': {
         this.result = this.input1 + this.input2;
+        this.pushCalculationIntoHistory();
         break;
       }
       case '-': {
         this.result = this.input1 - this.input2;
+        this.pushCalculationIntoHistory();
         break;
       }
       case '*': {
         this.result = this.input1 * this.input2;
+        this.pushCalculationIntoHistory();
         break;
       }
       case '/': {
         this.result = this.input1 / this.input2;
+        this.pushCalculationIntoHistory();
         break;
       }
       default: {
@@ -39,5 +46,14 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  private pushCalculationIntoHistory() {
+    this.calculationHistory.push({
+      input1: this.input1,
+      input2: this.input2,
+      result: this.result,
+      operation: this.operation,
+    });
   }
 }
