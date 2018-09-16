@@ -16,7 +16,7 @@
     <label>Age:</label>
     <input type="number" [(ngModel)]="age">
   </div>
-  <button class="save-button" (click)="saveUser()">Save</button>
+  <p-button class="save-button" (onClick)="saveUser()" label="Save"></p-button>
 </div>
 <div style="text-align:center">
   <h1>All users</h1>
@@ -36,8 +36,8 @@
       <td>{{user.lastName}}</td>
       <td>{{user.email}}</td>
       <td>{{user.age}}</td>
-      <td><button (click)="update(user)">Update</button></td>
-      <td><button (click)="delete(user)">Delete</button></td>
+      <td><p-button (onClick)="update(user)" label="Update"></p-button></td>
+      <td><p-button (onClick)="delete(user)" label="Delete"></p-button></td>
     </tr>
   </table>
 </div>
