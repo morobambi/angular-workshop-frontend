@@ -1,14 +1,14 @@
 <div style="text-align:center">
-  <input type="number">
-  <select>
+  <input type="number" [(ngModel)]="input1">
+  <select [(ngModel)]="operation">
     <option value="+">+</option>
     <option value="*">*</option>
     <option value="/">/</option>
     <option value="-">-</option>
   </select>
-  <input type="number">
-  <button>Vypočítat</button>
+  <input type="number" [(ngModel)]="input2">
+  <button (click)="countResult()">Vypočítat</button>
 </div>
 <div style="text-align:center">
-  Výsledek:
+  Výsledek: {{result}}
 </div>
