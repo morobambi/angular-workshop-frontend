@@ -1,23 +1,24 @@
 import { Injectable } from '@angular/core';
 import {User} from './user.model';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
-  getAll(): User[] {
-    return [];
-    // TODO use HttpService
+  getAll(): Observable<User[]> {
+    return this.http.get<User[]>('api/user');
   }
 
   save(user: User) {
-    // TODO use HttpService
+    return this.http.post<void>('api/user', user);
   }
 
   delete(email: string) {
-    // TODO use HttpService
+    return this.http.delete<void>('api/user/' + email);
   }
 }

@@ -23,7 +23,7 @@ export class UserManagementComponent implements OnInit {
   }
 
   loadAllUsers() {
-    this.users = this.userService.getAll();
+    this.userService.getAll().subscribe(users => this.users = users);
   }
 
   update(user: User) {
@@ -34,8 +34,7 @@ export class UserManagementComponent implements OnInit {
   }
 
   delete(user: User) {
-    this.userService.delete(user.email);
-    this.loadAllUsers();
+    this.userService.delete(user.email).subscribe(() => this.loadAllUsers());
   }
 
   saveUser() {
@@ -44,7 +43,6 @@ export class UserManagementComponent implements OnInit {
       lastName: this.lastName,
       email: this.email,
       age: this.age
-    });
-    this.loadAllUsers();
+    }).subscribe(() => this.loadAllUsers());
   }
 }
