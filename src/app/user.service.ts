@@ -6,19 +6,18 @@ import {User} from './user.model';
 })
 export class UserService {
 
-  users: Map<string, User> = new Map();
-
   constructor() {}
 
   getAll(): User[] {
-    return Array.from(this.users).map(([email, user]) => user);
+    return [];
+    // TODO use HttpService
   }
 
   save(user: User) {
-    this.users.set(user.email, user);
+    // TODO use HttpService
   }
 
   delete(email: string) {
-    this.users.delete(email);
+    // TODO use HttpService
   }
 }
