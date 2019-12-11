@@ -1,6 +1,14 @@
 <div style="text-align:center">
-  <h1>
-    <button (click)="buttonClicked()" [ngClass]="{'button-clicked': showTitle}">Zobrazit titulek</button>
-  </h1>
-  <app-titulek [(show)]="showTitle"></app-titulek>
+  <input type="number">
+  <select>
+    <option value="+">+</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+    <option value="-">-</option>
+  </select>
+  <input type="number">
+  <button>Vypočítat</button>
+</div>
+<div style="text-align:center">
+  Výsledek:
 </div>
